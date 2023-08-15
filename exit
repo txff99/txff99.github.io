@@ -1,0 +1,33 @@
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'style.css', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/chinese.png b/chinese.png[m
+[1mdeleted file mode 100644[m
+[1mindex 2475ebb..0000000[m
+Binary files a/chinese.png and /dev/null differ
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 3e9df06..1b88627 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -2,6 +2,7 @@[m
+ <html lang="en-US">[m
+   <head>[m
+     <link href="style.css" rel="stylesheet" />[m
+[32m+[m[32m    <link rel="icon" href="image/guitar.ico">[m
+     <meta charset="utf-8" />[m
+     <meta name="viewport" content="width=device-width" />[m
+     <div class="head">TXF's Crazy Life</div>[m
+[1mdiff --git a/style.css b/style.css[m
+[1mindex 839ed2f..75823c5 100644[m
+[1m--- a/style.css[m
+[1m+++ b/style.css[m
+[36m@@ -16,8 +16,8 @@[m [mp{[m
+ 	/* border: 5px solid black; */[m
+ }[m
+ body {[m
+[31m-	width: 1600px;[m
+[31m-	height: 1700px;[m
+[32m+[m	[32mwidth: 1000px;[m
+[32m+[m	[32mheight: 1000px;[m
+ 	margin: 0 auto;[m
+ 	background-color: #BBE18E ;[m
+ 	padding: 0 20px 20px 20px;[m
