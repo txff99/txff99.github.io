@@ -30,3 +30,15 @@ li{
     line-height: 1.5;
     
 }
+.back{
+	/* text-align: center; */
+	position: absolute;
+	align-items: center;
+	margin: auto;
+	
+	bottom: 0;
+	left: 50%;
+	/* width: 100%; */
+	/* height: 50px; */
+	transform: translate(-50%);
+}
