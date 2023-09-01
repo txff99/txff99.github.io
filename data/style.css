@@ -42,3 +42,7 @@ li{
 	/* height: 50px; */
 	transform: translate(-50%);
 }
+.date{
+	text-align: right;
+	
+}
