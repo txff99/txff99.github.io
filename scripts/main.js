@@ -1,6 +1,5 @@
 // var reader = new FileReader();
 // require(['fs'], function(fs){
-    
     // });
 // const fs = require('fs');
 // def`ine(['require','fs'], function (require) {
@@ -9,44 +8,57 @@
 // https://raw.githubusercontent.com/txff99/txff99.github.io/main/link/link.txt
 // https://api.github.com/repos/txff99/txff99.github.io/contents/link/link.txt
 var LINK_SRC = "https://api.github.com/repos/txff99/txff99.github.io/contents/link/link.txt";
-var DES_SRC = "https://github.com/txff99/txff99.github.io/blob/main/link/de`scription.txt"
+var DES_SRC = "https://api.github.com/repos/txff99/txff99.github.io/contents/link/description.txt"
+
 const links = [];
-const description = [];
+const descriptions = [];
+var num = -1;
 
-// let headers = new Headers();
-
-// headers['Access-Control-Allow-Origin'] = '*'
-// headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-// headers['Access-Control-Request-Method'] = '*'
-// headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-
-
-// // headers.append('Content-Type', 'application/text');
-// // headers.append('Accept', 'application/text');
-// // headers.append('Authorization', 'Basic ' );
-// // headers.append('Origin','http://localhost:3000');
-
-const getSampleText = async()=> {
-    await fetch(LINK_SRC,{
-        // mode: 'cors',
-        // credentials: 'include',
-        // method: 'POST',
-        // headers: headers
-    })
-      .then((res) => res.json())
-      .then((text) => {
-        console.log(text["content"]);
-        // links.push(text)
-       })
-      .catch((e) => console.error(e));
-  };
-getSampleText();
-
-// function reqListener () {
-//     console.log(this.responseText);
-//   }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
   
-//   var oReq = new XMLHttpRequest();
-//   oReq.addEventListener("load", reqListener);
-//   oReq.open("GET", LINK_SRC);
-//   oReq.send();
+
+const Change_Image_Random = async()=> {
+    
+    await fetch(LINK_SRC,{
+    })
+    .then((res) => res.json())
+    .then((text) => {
+        const tmp_link = atob(text["content"]).split('\n');
+        if(num==-1){
+            num = getRandomInt(tmp_link.length);
+            
+        }
+        console.log(tmp_link[num]);
+        document.getElementById("frame").src=tmp_link[num];
+        
+    })
+    .catch((e) => console.error(e));
+        
+    await fetch(DES_SRC,{
+    })
+    .then((res) => res.json())
+    .then((text) => {
+        const tmp_des = atob(text["content"]).split('\n');
+        if(num==-1){
+            num = getRandomInt(tmp_link.length);
+        }
+        document.getElementById("video_description").innerHTML=tmp_des[num];
+        
+
+    })
+    .catch((e) => console.error(e));
+    // return [links,descriptions];
+    
+    // for(var i=0;i<=links.length;++i){
+    //     console.log(links[i]);
+    // }
+};
+
+// const getdes = async()=> {
+    // };
+Change_Image_Random();
+    
+
+
