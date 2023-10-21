@@ -20,7 +20,7 @@ function getRandomInt(max) {
   
 
 const Change_Image_Random = async()=> {
-    
+    num = -1
     await fetch(LINK_SRC,{
     })
     .then((res) => res.json())
