@@ -51,7 +51,6 @@ class Wrapper {
     PostOnHTML(){
         var num = this.GetRandomInt();
         this.TrackTransaction(num);
-        console.log(this.element_list.length);
         document.getElementById("frame").src=this.video_links[num];
         document.getElementById("video_description").innerHTML=this.video_descriptions[num];
     }
